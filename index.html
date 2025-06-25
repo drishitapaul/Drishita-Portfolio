@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Drishita's Portfolio</title>
+
+  <!-- Anime.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Custom JS -->
+  <script src="script.js" defer></script>
+</head>
+
+<body class="bg-gradient-to-br from-purple-900 via-indigo-900 to-black text-white min-h-screen overflow-x-hidden font-['Roboto']">
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center px-6 md:px-16 py-6 bg-indigo-900 bg-opacity-80 fixed top-0 left-0 right-0 z-50 shadow-md">
+    <div class="text-2xl font-bold text-pink-400">Drishita's Portfolio</div>
+    <ul class="hidden md:flex space-x-8 text-gray-300">
+      <li><a href="index.html" class="hover:text-pink-400 transition">Home</a></li>
+      <li><a href="projects.html" class="hover:text-pink-400 transition">Projects</a></li>
+      <li><a href="skills.html" class="hover:text-pink-400 transition">Skills</a></li>
+      <li><a href="certificates.html" class="hover:text-pink-400 transition">Certificates</a></li>
+      <li><a href="contact.html" class="hover:text-pink-400 transition">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero / Intro Section -->
+  <header
+    class="flex flex-col justify-center items-center text-center pt-20 pb-6 px-6 md:px-16"
+    style="min-height: 75vh;"
+  >
+    <h1 class="text-5xl font-bold mb-4 animate-fadeIn">Hi, I'm <span class="text-pink-400">Drishita Paul</span></h1>
+    <p class="text-lg max-w-xl text-gray-300 mb-10 animate-fadeInDelay">
+      An aspiring Full Stack Developer, Cloud Enchantress, and AI/ML Explorer passionate about crafting magical and scalable solutions.
+    </p>
+
+    <!-- Call to Action Buttons -->
+    <div class="flex flex-wrap gap-6 justify-center">
+      <a href="projects.html" class="bg-indigo-700 text-white font-semibold py-3 px-6 rounded-md shadow-lg hover:bg-pink-500 transition animate-fadeInDelay">See Projects</a>
+      <a href="skills.html" class="bg-indigo-700 text-white font-semibold py-3 px-6 rounded-md shadow-lg hover:bg-indigo-800 transition animate-fadeInDelay">My Skills</a>
+      <a href="certificates.html" class="bg-indigo-700 text-white font-semibold py-3 px-6 rounded-md shadow-lg hover:bg-indigo-800 transition animate-fadeInDelay">Certifications</a>
+      <a href="contact.html" class="bg-indigo-700 text-white font-semibold py-3 px-6 rounded-md shadow-lg hover:bg-indigo-800 transition animate-fadeInDelay">Contact Me</a>
+    </div>
+  </header>
+
+  <!-- Education Timeline Section -->
+  <section id="education" class="px-6 md:px-16 pt-8 pb-16">
+    <h2 class="text-3xl font-bold text-center text-pink-300 mb-10 animate-slideIn">🎓 Education</h2>
+    <div class="relative max-w-3xl mx-auto animate-slideIn">
+      <div class="absolute top-0 left-4 bottom-0 w-1 bg-pink-400"></div>
+      <div class="ml-10 space-y-10">
+        <div class="relative">
+          <span
+            class="absolute -left-6 top-2 w-4 h-4 bg-pink-400 border-2 border-white rounded-full"
+            style="left: -1.25rem;"
+          ></span>
+          <h3 class="text-xl font-bold text-white">Kalinga Institute of Industrial Technology, Bhubaneswar</h3>
+          <p class="text-gray-300">B.Tech in Electronics and Computer Science</p>
+          <p class="text-gray-400 text-sm">2022 – Present</p>
+        </div>
+        <div class="relative">
+          <span
+            class="absolute -left-6 top-2 w-4 h-4 bg-pink-400 border-2 border-white rounded-full"
+            style="left: -1.25rem;"
+          ></span>
+          <h3 class="text-xl font-bold text-white">Serampore Girls’ High School</h3>
+          <p class="text-gray-300">
+            Studied Science stream, specializing in Maths, Physics, Chemistry, and Biology for a strong multidisciplinary foundation.
+          </p>
+          <p class="text-gray-400 text-sm">2020 – 2022</p>
+        </div>
+        <div class="relative">
+          <span
+            class="absolute -left-6 top-2 w-4 h-4 bg-pink-400 border-2 border-white rounded-full"
+            style="left: -1.25rem;"
+          ></span>
+          <h3 class="text-xl font-bold text-white">Patha Bhavan – Dankuni</h3>
+          <p class="text-gray-300">Graduated 10th a solid academic base and a passion for learning.</p>
+          <p class="text-gray-400 text-sm">Completed in 2020</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Background Music Controls -->
+  <audio id="bg-music" src="bgmusic.mp3" loop></audio>
+  <div class="fixed top-1/2 right-4 z-50 group">
+    <button id="musicToggle" class="bg-pink-400 text-indigo-900 font-bold px-4 py-2 rounded-full shadow-md hover:bg-pink-300 transition">🎵</button>
+    <input
+      type="range"
+      id="volumeControl"
+      class="hidden group-hover:block mt-2 w-24"
+      min="0"
+      max="1"
+      step="0.01"
+      value="1"
+    />
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const music = document.getElementById("bg-music");
+      const toggleBtn = document.getElementById("musicToggle");
+      const volumeSlider = document.getElementById("volumeControl");
+      let isPlaying = false;
+
+      toggleBtn.addEventListener("click", () => {
+        if (isPlaying) {
+          music.pause();
+          toggleBtn.textContent = "🔇";
+        } else {
+          music.play();
+          toggleBtn.textContent = "🎵";
+        }
+        isPlaying = !isPlaying;
+      });
+
+      volumeSlider.addEventListener("input", () => {
+        music.volume = parseFloat(volumeSlider.value);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skills | Drishita</title>
+
+  <!-- Anime.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Custom JS -->
+  <script src="script.js" defer></script>
+
+  <style>
+    .skill-card { display: none; }
+    .skill-card.active { display: block; }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-purple-900 via-indigo-900 to-black text-white font-['Roboto'] min-h-screen">
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center px-6 md:px-16 py-6 bg-indigo-900 bg-opacity-80 fixed top-0 left-0 right-0 z-50 shadow-md">
+    <div class="text-2xl font-bold text-pink-400">Drishita Paul</div>
+    <ul class="hidden md:flex space-x-8 text-gray-300">
+      <li><a href="index.html" class="hover:text-pink-400 transition">Home</a></li>
+      <li><a href="projects.html" class="hover:text-pink-400 transition">Projects</a></li>
+      <li><a href="skills.html" class="text-pink-400 font-semibold">Skills</a></li>
+      <li><a href="certificates.html" class="hover:text-pink-400 transition">Certificates</a></li>
+      <li><a href="contact.html" class="hover:text-pink-400 transition">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <main class="pt-32 px-6 md:px-16 pb-16">
+    <h1 class="text-4xl font-bold text-center mb-12 animate-fadeIn"> My Skills</h1>
+
+    <div class="flex gap-4 mb-8 justify-center">
+      <button class="filter-btn bg-pink-400 px-4 py-2 rounded-full hover:bg-pink-500 transition" onclick="filterSkills('all')">All</button>
+      <button class="filter-btn bg-indigo-600 px-4 py-2 rounded-full hover:bg-indigo-700 transition" onclick="filterSkills('frontend')">Frontend</button>
+      <button class="filter-btn bg-indigo-600 px-4 py-2 rounded-full hover:bg-indigo-700 transition" onclick="filterSkills('backend')">Backend</button>
+      <button class="filter-btn bg-indigo-600 px-4 py-2 rounded-full hover:bg-indigo-700 transition" onclick="filterSkills('cloud')">Cloud</button>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="skills-grid">
+      <!-- FRONTEND -->
+      <div class="skill-card active" data-category="frontend">
+        <div class="group bg-gradient-to-br from-pink-400 to-rose-600 p-1 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300">
+          <div class="bg-black p-4 rounded-xl">
+            <p class="text-white font-bold text-lg">HTML</p>
+            <div class="w-full h-3 mt-2 bg-indigo-700 rounded">
+              <div class="h-3 bg-pink-300 rounded" style="width: 95%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card active" data-category="frontend">
+        <div class="group bg-gradient-to-br from-pink-400 to-rose-600 p-1 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300">
+          <div class="bg-black p-4 rounded-xl">
+            <p class="text-white font-bold text-lg">CSS</p>
+            <div class="w-full h-3 mt-2 bg-indigo-700 rounded">
+              <div class="h-3 bg-pink-300 rounded" style="width: 90%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card active" data-category="frontend">
+        <div class="group bg-gradient-to-br from-yellow-400 to-orange-500 p-1 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300">
+          <div class="bg-black p-4 rounded-xl">
+            <p class="text-white font-bold text-lg">JavaScript</p>
+            <div class="w-full h-3 mt-2 bg-indigo-700 rounded">
+              <div class="h-3 bg-yellow-300 rounded" style="width: 85%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card active" data-category="frontend">
+        <div class="group bg-gradient-to-br from-blue-400 to-indigo-500 p-1 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300">
+          <div class="bg-black p-4 rounded-xl">
+            <p class="text-white font-bold text-lg">React</p>
+            <div class="w-full h-3 mt-2 bg-indigo-700 rounded">
+              <div class="h-3 bg-blue-300 rounded" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BACKEND -->
+      <div class="skill-card active" data-category="backend">
+        <div class="group bg-gradient-to-br from-green-400 to-teal-500 p-1 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300">
+          <div class="bg-black p-4 rounded-xl">
+            <p class="text-white font-bold text-lg">Node.js</p>
+            <div class="w-full h-3 mt-2 bg-indigo-700 rounded">
+              <div class="h-3 bg-green-300 rounded" style="width: 75%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card active" data-category="backend">
+        <div class="group bg-gradient-to-br from-purple-400 to-purple-700 p-1 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300">
+          <div class="bg-black p-4 rounded-xl">
+            <p class="text-white font-bold text-lg">Express.js</p>
+            <div class="w-full h-3 mt-2 bg-indigo-700 rounded">
+              <div class="h-3 bg-purple-300 rounded" style="width: 70%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CLOUD -->
+      <div class="skill-card active" data-category="cloud">
+        <div class="group bg-gradient-to-br from-orange-400 to-red-500 p-1 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300">
+          <div class="bg-black p-4 rounded-xl">
+            <p class="text-white font-bold text-lg">AWS</p>
+            <div class="w-full h-3 mt-2 bg-indigo-700 rounded">
+              <div class="h-3 bg-yellow-300 rounded" style="width: 70%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card active" data-category="cloud">
+        <div class="group bg-gradient-to-br from-cyan-400 to-blue-500 p-1 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300">
+          <div class="bg-black p-4 rounded-xl">
+            <p class="text-white font-bold text-lg">Firebase</p>
+            <div class="w-full h-3 mt-2 bg-indigo-700 rounded">
+              <div class="h-3 bg-green-300 rounded" style="width: 65%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function filterSkills(category) {
+      const cards = document.querySelectorAll('.skill-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.classList.add('active');
+        } else {
+          card.classList.remove('active');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

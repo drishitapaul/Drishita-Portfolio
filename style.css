@@ -1,0 +1,70 @@
+/* Declare your CSS variables FIRST in :root */
+:root {
+  --space-cadet: #3a345b;
+  --fairy-tale: #f3c8dd;
+  --thulian-pink: #d183a9;
+  --chinese-violet: #71557a;
+  --tyrian-purple: #4b1535;
+}
+
+/* Fonts & Base Setup */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to bottom right, var(--space-cadet), var(--tyrian-purple));
+  color: var(--fairy-tale);
+}
+
+/* Section Styling */
+header {
+  background-color: var(--space-cadet);
+}
+
+section#about {
+  background-color: var(--chinese-violet);
+  padding: 2rem;
+  border-radius: 1rem;
+  color: var(--fairy-tale);
+}
+
+section#skills {
+  background-color: var(--tyrian-purple);
+  padding: 2rem;
+  border-radius: 1rem;
+  color: var(--fairy-tale);
+}
+
+section#projects {
+  background-color: var(--thulian-pink);
+  padding: 2rem;
+  border-radius: 1rem;
+  color: var(--fairy-tale);
+}
+
+/* Text Highlight */
+h1 span, h2 {
+  color: var(--fairy-tale);
+}
+
+/* Footer */
+footer {
+  background-color: var(--space-cadet);
+  color: var(--fairy-tale);
+}
+
+/* Animation class helpers */
+.animate-fadeIn,
+.animate-fadeInDelay,
+.animate-slideIn {
+  opacity: 0;
+}
+
+/* Modal styling — BE SPECIFIC so Tailwind doesn’t override */
+.modal-content {
+  background-color: #f3c8dd !important; /* Fairy Tale pinkish */
+  color: #4b1535 !important;            /* Tyrian Purple text */
+  backdrop-filter: blur(10px);          /* frosted glass effect */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+.modal-header {
+  border-bottom: 1px solid #71557a; /* Chinese Violet */
+}
